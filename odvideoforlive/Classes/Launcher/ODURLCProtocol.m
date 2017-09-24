@@ -23,11 +23,6 @@ static NSString * const URLProtocolHandledKey=@"URLProtocolHandledKey";
     
 //    NSLog(@"request.URL.absoluteString = %@",request.URL.absoluteString);
     
-    if ([self blockURL:request.URL]) {
-        NSLog(@"request.URL.absoluteString is blocked: %@",request.URL.absoluteString);
-        return NO;
-    }
-    
     if ([request.URL.path.lowercaseString hasSuffix:@"m3u8"]||[request.URL.path.lowercaseString hasSuffix:@"mp4"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"VideoUrlString" object:request.URL.absoluteString];
 
@@ -49,27 +44,8 @@ static NSString * const URLProtocolHandledKey=@"URLProtocolHandledKey";
     return NO;
 }
 
-+(BOOL)blockURL:(NSURL *)url{
-    NSSet *set=[NSSet setWithObjects:@"baidu.com",
-                @"flvsp.com",
-                @"cnzz.com",
-                @"baosmx.com",
-                @"qqee.org",
-                @"bdimg.com",
-                @"mmstat.com",
-                nil];
-    
-    for (NSString *item in set) {
-        if([url.host hasSuffix:item])return YES;
-    }
-    
-    return NO;
-}
-
 
 + (NSURLRequest *) canonicalRequestForRequest:(NSURLRequest *)request {
-//    NSMutableURLRequest *mutableReqeust = [request mutableCopy];
-//    mutableReqeust = [self redirectHostInRequset:mutableReqeust];
     return request;
 }
 
@@ -83,11 +59,6 @@ static NSString * const URLProtocolHandledKey=@"URLProtocolHandledKey";
     NSMutableURLRequest *mutableReqeust = [[self request] mutableCopy];
     //标示改request已经处理过了，防止无限循环
     [NSURLProtocol setProperty:@YES forKey:URLProtocolHandledKey inRequest:mutableReqeust];
-    
-    if ([ODURLCProtocol blockURL:mutableReqeust.URL]) {
-        NSLog(@"request.URL.absoluteString is blocked: %@",mutableReqeust.URL.absoluteString);
-        return;
-    }
     
     self.connection = [NSURLConnection connectionWithRequest:mutableReqeust delegate:self];
 }

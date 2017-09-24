@@ -49,11 +49,9 @@ static NSString *URLProtocolHandledKey=@"URLProtocolHandledKey";
 
 +(BOOL)blockURL:(NSURL *)url{
     NSSet *set=[NSSet setWithObjects:@"baidu.com",
-                @"flvsp.com",
                 @"cnzz.com",
                 @"baosmx.com",
                 @"qqee.org",
-                @"bdimg.com",
                 @"mmstat.com",
                 nil];
     
@@ -66,16 +64,7 @@ static NSString *URLProtocolHandledKey=@"URLProtocolHandledKey";
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request
 {
-    NSMutableURLRequest *mutableReqeust = [request mutableCopy];
-    
-    //request截取重定向
-//    if ([request.URL.absoluteString isEqualToString:sourUrl])
-//    {
-//        NSURL* url1 = [NSURL URLWithString:localUrl];
-//        mutableReqeust = [NSMutableURLRequest requestWithURL:url1];
-//    }
-    
-    return mutableReqeust;
+    return request;
 }
 
 + (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b
@@ -96,23 +85,6 @@ static NSString *URLProtocolHandledKey=@"URLProtocolHandledKey";
         self.task = [session dataTaskWithRequest:self.request];
         [self.task resume];
     }
-    
-
-    //这里最好加上缓存判断，加载本地离线文件， 这个直接简单的例子。
-//    if ([mutableReqeust.URL.absoluteString isEqualToString:sourIconUrl])
-//    {
-//        NSData* data = UIImagePNGRepresentation([UIImage imageNamed:@"medlinker"]);
-//        NSURLResponse* response = [[NSURLResponse alloc] initWithURL:self.request.URL MIMEType:@"image/png" expectedContentLength:data.length textEncodingName:nil];
-//        [self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowed];
-//        [self.client URLProtocol:self didLoadData:data];
-//        [self.client URLProtocolDidFinishLoading:self];
-//    }
-//    else
-//    {
-//        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
-//        self.task = [session dataTaskWithRequest:self.request];
-//        [self.task resume];
-//    }
 }
 
 - (void)stopLoading
@@ -126,22 +98,12 @@ static NSString *URLProtocolHandledKey=@"URLProtocolHandledKey";
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
     
-    NSLog(@"URL>>>>>>>>>>>%@",response.URL.absoluteString);
-    
     [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowed];
-    
-    
-    
+
     completionHandler(NSURLSessionResponseAllow);
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
-    
-    NSString *string=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    string=[string stringByReplacingOccurrencesOfString:@"(baidu.com)|(cnzz.com)|(baosmx.com)|(qqee.org)|(bdimg.com)|(mmstat.com)" withString:@"ynsfy.com" options:NSRegularExpressionSearch range:NSMakeRange(0, string.length)];
-    
-//    NSLog(@"URLSession_didReceiveData:%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-    
     [[self client] URLProtocol:self didLoadData:[string dataUsingEncoding:NSUTF8StringEncoding]];
 }
 
