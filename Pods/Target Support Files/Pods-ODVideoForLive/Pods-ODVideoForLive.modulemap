@@ -1,0 +1,6 @@
+framework module Pods_ODVideoForLive {
+  umbrella header "Pods-ODVideoForLive-umbrella.h"
+
+  export *
+  module * { export * }
+}
