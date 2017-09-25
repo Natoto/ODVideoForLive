@@ -26,8 +26,6 @@
 		336274DA1F761E800035BFCF /* ODVideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 336274D91F761E800035BFCF /* ODVideoItem.m */; };
 		336274E21F7645780035BFCF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 336274E11F7645780035BFCF /* WebKit.framework */; };
 		336274E51F7648FE0035BFCF /* ODURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 336274E41F7648FE0035BFCF /* ODURLProtocol.m */; };
-		336274E71F768F320035BFCF /* 120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 336274E61F768F320035BFCF /* 120.jpg */; };
-		336274E91F768F420035BFCF /* 121.png in Resources */ = {isa = PBXBuildFile; fileRef = 336274E81F768F420035BFCF /* 121.png */; };
 		336274F31F76988C0035BFCF /* ODVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336274F11F76988B0035BFCF /* ODVideoDetailViewController.m */; };
 		336274F71F7740F30035BFCF /* ODAnimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336274F61F7740F30035BFCF /* ODAnimeViewController.m */; };
 		336274FB1F77411E0035BFCF /* ODMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 336274FA1F77411E0035BFCF /* ODMovieViewController.m */; };
@@ -51,6 +49,7 @@
 		339C96FB1F77E62900B9BB91 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96F21F77E62900B9BB91 /* GCDAsyncUdpSocket.m */; };
 		339C96FC1F77E62900B9BB91 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96F51F77E62900B9BB91 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		339C96FE1F77E64600B9BB91 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 339C96FD1F77E64600B9BB91 /* libxml2.tbd */; };
+		339C9C951F7932A700B9BB91 /* 120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 339C9C941F7932A700B9BB91 /* 120.jpg */; };
 		ED780B307BF9660F8C0BB722 /* Pods_ODVideoForLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8AB4DDFCF91E1976E671AA /* Pods_ODVideoForLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,8 +97,6 @@
 		336274E11F7645780035BFCF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		336274E31F7648FE0035BFCF /* ODURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODURLProtocol.h; sourceTree = "<group>"; };
 		336274E41F7648FE0035BFCF /* ODURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ODURLProtocol.m; sourceTree = "<group>"; };
-		336274E61F768F320035BFCF /* 120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 120.jpg; path = ../../../../../../Downloads/120.jpg; sourceTree = "<group>"; };
-		336274E81F768F420035BFCF /* 121.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 121.png; path = ../../../../../../Downloads/121.png; sourceTree = "<group>"; };
 		336274F01F76988B0035BFCF /* ODVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODVideoDetailViewController.h; sourceTree = "<group>"; };
 		336274F11F76988B0035BFCF /* ODVideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODVideoDetailViewController.m; sourceTree = "<group>"; };
 		336274F51F7740F30035BFCF /* ODAnimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODAnimeViewController.h; sourceTree = "<group>"; };
@@ -144,6 +141,7 @@
 		339C96F41F77E62900B9BB91 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		339C96F51F77E62900B9BB91 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		339C96FD1F77E64600B9BB91 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		339C9C941F7932A700B9BB91 /* 120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 120.jpg; sourceTree = "<group>"; };
 		3D0B27E2C2EA9653F5CFF4BA /* Pods-dianyingba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dianyingba.release.xcconfig"; path = "Pods/Target Support Files/Pods-dianyingba/Pods-dianyingba.release.xcconfig"; sourceTree = "<group>"; };
 		4974538B12948094B4F88D27 /* Pods-ODVideoForLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ODVideoForLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ODVideoForLive/Pods-ODVideoForLive.debug.xcconfig"; sourceTree = "<group>"; };
 		72F23ED4AF34BA8443942B81 /* Pods_dianyingba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dianyingba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,8 +340,7 @@
 		3399BA781F7601490018DD72 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				336274E81F768F420035BFCF /* 121.png */,
-				336274E61F768F320035BFCF /* 120.jpg */,
+				339C9C941F7932A700B9BB91 /* 120.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -514,12 +511,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3399BA691F75FE140018DD72 /* LaunchScreen.storyboard in Resources */,
-				336274E91F768F420035BFCF /* 121.png in Resources */,
 				3399BA661F75FE140018DD72 /* Assets.xcassets in Resources */,
 				336274C41F76100E0035BFCF /* char_ref.rl in Resources */,
+				339C9C951F7932A700B9BB91 /* 120.jpg in Resources */,
 				3399BA7C1F7601490018DD72 /* Info.plist in Resources */,
 				336274CA1F76100E0035BFCF /* tag.in in Resources */,
-				336274E71F768F320035BFCF /* 120.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
