@@ -104,7 +104,7 @@ static NSString *URLProtocolHandledKey=@"URLProtocolHandledKey";
 }
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
-    [[self client] URLProtocol:self didLoadData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+    [[self client] URLProtocol:self didLoadData:data];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error {

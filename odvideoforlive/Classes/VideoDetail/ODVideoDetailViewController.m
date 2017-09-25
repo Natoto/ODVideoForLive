@@ -15,6 +15,9 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "EHRWebView.h"
+#import "CLUPnPServer.h"
+#import "CLUPnPRenderer.h"
+#import "CLUPnPDevice.h"
 
 @interface VideoDetailItem:NSObject
 
@@ -30,7 +33,7 @@
 
 @end
 
-@interface ODVideoDetailViewController ()<WKNavigationDelegate,EHRWebViewDelegate,UIWebViewDelegate>
+@interface ODVideoDetailViewController ()<WKNavigationDelegate,EHRWebViewDelegate,UIWebViewDelegate,CLUPnPServerDelegate>
 
 #pragma mark - --- 属性定义 ---
 
@@ -49,6 +52,18 @@
 @property(nonatomic,strong) UIScrollView * itemsView;
 
 @property(nonatomic,strong) MBProgressHUD *hud;
+
+@property(nonatomic,assign) BOOL  originPlayer;
+
+@property(nonatomic,strong) UIBarButtonItem *dlnaButton;
+
+@property(nonatomic,strong) UIBarButtonItem *playerButton;
+
+//TODO DLNA TV 视频投放 后期优化
+@property(nonatomic,strong) CLUPnPRenderer *renderer;
+
+@property(nonatomic,strong) CLUPnPServer *server;
+
 
 @end
 
@@ -109,11 +124,23 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedVideoUrlString:) name:@"VideoUrlString" object:nil];
     
+    UIBarButtonItem *playerButton=[[UIBarButtonItem alloc]initWithTitle:@"播放器2" style:UIBarButtonItemStylePlain target:self action:@selector(switchPlayer)];
+    UIBarButtonItem *dlnaButton=[[UIBarButtonItem alloc]initWithTitle:@"TV 关" style:UIBarButtonItemStylePlain target:self action:@selector(switchDLNA)];
+    self.playerButton=playerButton;
+    self.dlnaButton=dlnaButton;
+    self.navigationItem.rightBarButtonItems=@[playerButton,dlnaButton];
+    
+    CLUPnPServer *server=[CLUPnPServer shareServer];
+    server.delegate=self;
+    [server start];
+    self.server=server;
+    
 }
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 
 
 -(void)initViewDataSource{
@@ -232,6 +259,17 @@
 }
 -(void)player:(NSString *)videoUri{
     
+    if (self.originPlayer) {
+        return;
+    }
+    
+    if ([self.dlnaButton.title hasSuffix:@"开"]&&self.renderer) {
+        [self.renderer stop];
+        [self.renderer setAVTransportURL:videoUri];
+        [self.renderer play];
+        return;
+    }
+    
     [self.view bringSubviewToFront:self.playerView];
     [self.webView removeFromSuperview];
     
@@ -255,6 +293,19 @@
 }
 
 #pragma mark - --- view event ---
+
+-(void)switchPlayer{
+    self.originPlayer=!self.originPlayer;
+    self.playerButton.title=self.originPlayer?@"播放器1":@"播放器2";
+}
+
+-(void)switchDLNA{
+    if ([self.dlnaButton.title hasSuffix:@"关"]) {
+        self.dlnaButton.title=@"TV 开";
+    }else{
+        self.dlnaButton.title=@"TV 关";
+    }
+}
 
 -(void)reloadItemView{
     [self.itemsView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -310,6 +361,19 @@
 }
 
 #pragma mark - --- delegate ---
+
+- (void)upnpSearchChangeWithResults:(NSArray <CLUPnPDevice *>*)devices{
+    for (CLUPnPDevice *device in devices) {
+        
+        if ([device.friendlyName hasPrefix:@"LED"]) {
+            self.renderer=[[CLUPnPRenderer alloc]initWithModel:device];
+            [self.server stop];
+            
+//            self.dlnaButton.title=device.friendlyName;
+            return;
+        }
+    }
+}
 
 -(BOOL)webView:(UIWebView *)webView willSendRequest:(NSURLRequest *)request{
     if([request.URL.path.lowercaseString hasSuffix:@"m3u8"]||[request.URL.path.lowercaseString hasSuffix:@"mp4"]){

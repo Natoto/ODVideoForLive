@@ -43,6 +43,14 @@
 		3399BA801F76017B0018DD72 /* ODHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399BA7F1F76017B0018DD72 /* ODHomeViewController.m */; };
 		3399BAAB1F7605C10018DD72 /* ODNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399BAAA1F7605C10018DD72 /* ODNetworking.m */; };
 		3399BAAE1F7605E20018DD72 /* ODNetworkingDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399BAAD1F7605E20018DD72 /* ODNetworkingDownload.m */; };
+		339C96F61F77E62900B9BB91 /* CLUPnPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96E61F77E62900B9BB91 /* CLUPnPAction.m */; };
+		339C96F71F77E62900B9BB91 /* CLUPnPAVPositionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96E81F77E62900B9BB91 /* CLUPnPAVPositionInfo.m */; };
+		339C96F81F77E62900B9BB91 /* CLUPnPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96EA1F77E62900B9BB91 /* CLUPnPDevice.m */; };
+		339C96F91F77E62900B9BB91 /* CLUPnPRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96EC1F77E62900B9BB91 /* CLUPnPRenderer.m */; };
+		339C96FA1F77E62900B9BB91 /* CLUPnPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96EF1F77E62900B9BB91 /* CLUPnPServer.m */; };
+		339C96FB1F77E62900B9BB91 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96F21F77E62900B9BB91 /* GCDAsyncUdpSocket.m */; };
+		339C96FC1F77E62900B9BB91 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 339C96F51F77E62900B9BB91 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		339C96FE1F77E64600B9BB91 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 339C96FD1F77E64600B9BB91 /* libxml2.tbd */; };
 		ED780B307BF9660F8C0BB722 /* Pods_ODVideoForLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8AB4DDFCF91E1976E671AA /* Pods_ODVideoForLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +127,23 @@
 		3399BAAA1F7605C10018DD72 /* ODNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ODNetworking.m; sourceTree = "<group>"; };
 		3399BAAC1F7605E20018DD72 /* ODNetworkingDownload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODNetworkingDownload.h; sourceTree = "<group>"; };
 		3399BAAD1F7605E20018DD72 /* ODNetworkingDownload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ODNetworkingDownload.m; sourceTree = "<group>"; };
+		339C96E41F77E62900B9BB91 /* CLUPnP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnP.h; sourceTree = "<group>"; };
+		339C96E51F77E62900B9BB91 /* CLUPnPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnPAction.h; sourceTree = "<group>"; };
+		339C96E61F77E62900B9BB91 /* CLUPnPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUPnPAction.m; sourceTree = "<group>"; };
+		339C96E71F77E62900B9BB91 /* CLUPnPAVPositionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnPAVPositionInfo.h; sourceTree = "<group>"; };
+		339C96E81F77E62900B9BB91 /* CLUPnPAVPositionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUPnPAVPositionInfo.m; sourceTree = "<group>"; };
+		339C96E91F77E62900B9BB91 /* CLUPnPDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnPDevice.h; sourceTree = "<group>"; };
+		339C96EA1F77E62900B9BB91 /* CLUPnPDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUPnPDevice.m; sourceTree = "<group>"; };
+		339C96EB1F77E62900B9BB91 /* CLUPnPRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnPRenderer.h; sourceTree = "<group>"; };
+		339C96EC1F77E62900B9BB91 /* CLUPnPRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUPnPRenderer.m; sourceTree = "<group>"; };
+		339C96ED1F77E62900B9BB91 /* CLUPnPResponseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnPResponseDelegate.h; sourceTree = "<group>"; };
+		339C96EE1F77E62900B9BB91 /* CLUPnPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUPnPServer.h; sourceTree = "<group>"; };
+		339C96EF1F77E62900B9BB91 /* CLUPnPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLUPnPServer.m; sourceTree = "<group>"; };
+		339C96F11F77E62900B9BB91 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		339C96F21F77E62900B9BB91 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		339C96F41F77E62900B9BB91 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		339C96F51F77E62900B9BB91 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		339C96FD1F77E64600B9BB91 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		3D0B27E2C2EA9653F5CFF4BA /* Pods-dianyingba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dianyingba.release.xcconfig"; path = "Pods/Target Support Files/Pods-dianyingba/Pods-dianyingba.release.xcconfig"; sourceTree = "<group>"; };
 		4974538B12948094B4F88D27 /* Pods-ODVideoForLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ODVideoForLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ODVideoForLive/Pods-ODVideoForLive.debug.xcconfig"; sourceTree = "<group>"; };
 		72F23ED4AF34BA8443942B81 /* Pods_dianyingba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dianyingba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339C96FE1F77E64600B9BB91 /* libxml2.tbd in Frameworks */,
 				336274E21F7645780035BFCF /* WebKit.framework in Frameworks */,
 				ED780B307BF9660F8C0BB722 /* Pods_ODVideoForLive.framework in Frameworks */,
 			);
@@ -325,6 +351,7 @@
 		3399BA791F7601490018DD72 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				339C96E31F77E62900B9BB91 /* CLUPnP */,
 				3362749C1F76100E0035BFCF /* OCGumbo */,
 			);
 			path = Library;
@@ -363,9 +390,49 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		339C96E31F77E62900B9BB91 /* CLUPnP */ = {
+			isa = PBXGroup;
+			children = (
+				339C96E41F77E62900B9BB91 /* CLUPnP.h */,
+				339C96E51F77E62900B9BB91 /* CLUPnPAction.h */,
+				339C96E61F77E62900B9BB91 /* CLUPnPAction.m */,
+				339C96E71F77E62900B9BB91 /* CLUPnPAVPositionInfo.h */,
+				339C96E81F77E62900B9BB91 /* CLUPnPAVPositionInfo.m */,
+				339C96E91F77E62900B9BB91 /* CLUPnPDevice.h */,
+				339C96EA1F77E62900B9BB91 /* CLUPnPDevice.m */,
+				339C96EB1F77E62900B9BB91 /* CLUPnPRenderer.h */,
+				339C96EC1F77E62900B9BB91 /* CLUPnPRenderer.m */,
+				339C96ED1F77E62900B9BB91 /* CLUPnPResponseDelegate.h */,
+				339C96EE1F77E62900B9BB91 /* CLUPnPServer.h */,
+				339C96EF1F77E62900B9BB91 /* CLUPnPServer.m */,
+				339C96F01F77E62900B9BB91 /* CocoaAsyncSocket */,
+				339C96F31F77E62900B9BB91 /* GData */,
+			);
+			path = CLUPnP;
+			sourceTree = "<group>";
+		};
+		339C96F01F77E62900B9BB91 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				339C96F11F77E62900B9BB91 /* GCDAsyncUdpSocket.h */,
+				339C96F21F77E62900B9BB91 /* GCDAsyncUdpSocket.m */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		339C96F31F77E62900B9BB91 /* GData */ = {
+			isa = PBXGroup;
+			children = (
+				339C96F41F77E62900B9BB91 /* GDataXMLNode.h */,
+				339C96F51F77E62900B9BB91 /* GDataXMLNode.m */,
+			);
+			path = GData;
+			sourceTree = "<group>";
+		};
 		345962723E1A7C011F396F79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				339C96FD1F77E64600B9BB91 /* libxml2.tbd */,
 				336274E11F7645780035BFCF /* WebKit.framework */,
 				72F23ED4AF34BA8443942B81 /* Pods_dianyingba.framework */,
 				DB8AB4DDFCF91E1976E671AA /* Pods_ODVideoForLive.framework */,
@@ -540,12 +607,19 @@
 				336274E51F7648FE0035BFCF /* ODURLProtocol.m in Sources */,
 				336274CD1F76100E0035BFCF /* util.c in Sources */,
 				336274C61F76100E0035BFCF /* parser.c in Sources */,
+				339C96F71F77E62900B9BB91 /* CLUPnPAVPositionInfo.m in Sources */,
 				336274C91F76100E0035BFCF /* tag.c in Sources */,
 				336274D71F761CD60035BFCF /* ODHomeViewCollectionViewCell.m in Sources */,
 				336274CF1F76100E0035BFCF /* OCGumbo+Query.m in Sources */,
 				336274F71F7740F30035BFCF /* ODAnimeViewController.m in Sources */,
 				336274C21F76100E0035BFCF /* attribute.c in Sources */,
+				339C96F81F77E62900B9BB91 /* CLUPnPDevice.m in Sources */,
+				339C96F91F77E62900B9BB91 /* CLUPnPRenderer.m in Sources */,
 				3399BA801F76017B0018DD72 /* ODHomeViewController.m in Sources */,
+				339C96FC1F77E62900B9BB91 /* GDataXMLNode.m in Sources */,
+				339C96FB1F77E62900B9BB91 /* GCDAsyncUdpSocket.m in Sources */,
+				339C96F61F77E62900B9BB91 /* CLUPnPAction.m in Sources */,
+				339C96FA1F77E62900B9BB91 /* CLUPnPServer.m in Sources */,
 				336274CB1F76100E0035BFCF /* tokenizer.c in Sources */,
 				336274D01F76100E0035BFCF /* OCGumbo.m in Sources */,
 				336275081F7765E10035BFCF /* EHRWebView.m in Sources */,
@@ -683,6 +757,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C57VTP5BVF;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "$(SRCROOT)/odvideoforlive/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -699,6 +774,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C57VTP5BVF;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "$(SRCROOT)/odvideoforlive/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
