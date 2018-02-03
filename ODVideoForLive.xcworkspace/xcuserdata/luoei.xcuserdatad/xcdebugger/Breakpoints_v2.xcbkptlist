@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "odvideoforlive/Classes/VideoDetail/ODVideoDetailViewController.m"
-            timestampString = "527995344.179259"
+            timestampString = "539360611.558381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "-player:"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "-getUrlPrefix:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

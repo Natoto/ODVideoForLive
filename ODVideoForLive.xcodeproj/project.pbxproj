@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		335233D11F8F36C600376896 /* ODViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 335233D01F8F36C600376896 /* ODViewController.m */; };
 		336274C21F76100E0035BFCF /* attribute.c in Sources */ = {isa = PBXBuildFile; fileRef = 3362749F1F76100E0035BFCF /* attribute.c */; };
 		336274C31F76100E0035BFCF /* char_ref.c in Sources */ = {isa = PBXBuildFile; fileRef = 336274A11F76100E0035BFCF /* char_ref.c */; };
 		336274C41F76100E0035BFCF /* char_ref.rl in Resources */ = {isa = PBXBuildFile; fileRef = 336274A31F76100E0035BFCF /* char_ref.rl */; };
@@ -54,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		335233CF1F8F36C600376896 /* ODViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODViewController.h; sourceTree = "<group>"; };
+		335233D01F8F36C600376896 /* ODViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ODViewController.m; sourceTree = "<group>"; };
 		3362749F1F76100E0035BFCF /* attribute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = attribute.c; sourceTree = "<group>"; };
 		336274A01F76100E0035BFCF /* attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attribute.h; sourceTree = "<group>"; };
 		336274A11F76100E0035BFCF /* char_ref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = char_ref.c; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 			children = (
 				336274F01F76988B0035BFCF /* ODVideoDetailViewController.h */,
 				336274F11F76988B0035BFCF /* ODVideoDetailViewController.m */,
+				335233CF1F8F36C600376896 /* ODViewController.h */,
+				335233D01F8F36C600376896 /* ODViewController.m */,
 			);
 			path = VideoDetail;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				339C96F91F77E62900B9BB91 /* CLUPnPRenderer.m in Sources */,
 				3399BA801F76017B0018DD72 /* ODHomeViewController.m in Sources */,
 				339C96FC1F77E62900B9BB91 /* GDataXMLNode.m in Sources */,
+				335233D11F8F36C600376896 /* ODViewController.m in Sources */,
 				339C96FB1F77E62900B9BB91 /* GCDAsyncUdpSocket.m in Sources */,
 				339C96F61F77E62900B9BB91 /* CLUPnPAction.m in Sources */,
 				339C96FA1F77E62900B9BB91 /* CLUPnPServer.m in Sources */,

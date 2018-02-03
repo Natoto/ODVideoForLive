@@ -24,7 +24,7 @@
     
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
-        make.bottom.equalTo(self.titleLabel.mas_top).offset(-5);
+        make.height.mas_equalTo(140);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -43,7 +43,8 @@
     if(_imageView)return _imageView;
     
      UIImageView *imageView=[[UIImageView alloc]init];
-    
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds=YES;
     _imageView=imageView;
     
     return _imageView;

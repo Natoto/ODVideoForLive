@@ -181,11 +181,11 @@
         
     }
     if(!array.count){
-        self.hud.label.text=@"解析失败!";
-        [self.hud hideAnimated:YES];
-        
-        return;
-    };
+        VideoDetailItem *item=[[VideoDetailItem alloc]init];
+        item.index=0;
+        item.title=@"默认";
+        [array addObject:item];
+    }
     
     self.data=[array copy];
     
@@ -311,7 +311,7 @@
     [self.itemsView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     __block UIView *lastView;
-    
+    CGFloat width = (ScreenWidth - 50)/4;
     [self.data enumerateObjectsUsingBlock:^(VideoDetailItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
         UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
         
@@ -333,10 +333,10 @@
                     make.top.equalTo(lastView.mas_bottom).offset(15);
                 }
             }else{
-                make.left.equalTo(lastView.mas_right).offset(20);
+                make.left.equalTo(lastView.mas_right).offset(10);
                 make.top.equalTo(lastView);
             }
-            make.width.mas_equalTo(60);
+            make.width.mas_equalTo(width);
             make.height.mas_equalTo(44);
         }];
         lastView=button;
@@ -344,7 +344,7 @@
     
     if (lastView) {
         [lastView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(0);
+            make.bottom.mas_equalTo(-15);
         }];
     }
 }

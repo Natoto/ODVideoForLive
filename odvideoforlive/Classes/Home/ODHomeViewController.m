@@ -219,8 +219,8 @@
     if(_collectionView)return _collectionView;
     
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
-    layout.itemSize=CGSizeMake(100, 160);
-    layout.sectionInset=UIEdgeInsetsMake(20, 30, 20, 30);
+    layout.itemSize=CGSizeMake(100, 200);
+    layout.sectionInset=UIEdgeInsetsMake(10, 10, 10, 10);
     
     UICollectionView *view=[[UICollectionView alloc]initWithFrame:CGRectNull collectionViewLayout:layout];
     [view registerClass:[ODHomeViewCollectionViewCell class] forCellWithReuseIdentifier:@"C"];
